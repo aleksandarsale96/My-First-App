@@ -1,0 +1,251 @@
+body {
+    background: linear-gradient(45deg, #e96868, #46abc9);
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#app-container {
+    max-width: 490px;
+    margin: 0 auto;
+    height: 95vh;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0, -50%);
+    top: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/****************************HEADER*************************************/
+
+header {
+    display: flex;
+    height: 80px;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    background: #f9f9f9;
+
+    flex-shrink: 0;
+}
+
+.header-cell {
+
+    flex      : 1 1 33%;
+    background: white;
+
+    text-align: center;
+    padding   : 8px;
+
+    background-repeat  : no-repeat !important;
+    background-position: center !important;
+
+}
+
+.header-cell:hover {
+    background: #ffffff;
+    cursor    : pointer;
+}
+
+.header-cell:first-child {
+    border-top-left-radius: 10px;
+
+    background-image: url(../assets/icon-1.png);
+}
+
+.header-cell:nth-child(2) {
+    background-image: url(../assets/icon-2.png);
+}
+
+.header-cell:last-child {
+    border-top-right-radius: 10px;
+
+    background-image: url(../assets/icon-3.png);
+}
+
+
+.header-cell.inactive-header-cell:first-child {
+    background-image: url(../assets/icon-1-light.png);
+}
+
+.header-cell.inactive-header-cell:nth-child(2) {
+    background-image: url(../assets/icon-2-light.png);
+}
+
+.header-cell.inactive-header-cell:last-child {
+    background-image: url(../assets/icon-3-light.png);
+}
+
+
+
+.inactive-header-cell {
+    background: transparent;
+}
+
+
+
+/****************************CONTENT*************************************/
+
+#app-body {
+    flex-grow: 1;
+    overflow : hidden;
+    display  : flex;
+}
+
+.todo-item {
+    padding   : 22px 4px;
+    margin    : 0px 12px;
+    cursor    : pointer;
+    border-top: 1px solid #e8e8e8;
+
+    display    : flex;
+    align-items: center;
+}
+
+
+.todo-item.completed .data {
+    text-decoration: line-through;
+}
+
+.todo-item .data {
+    text-decoration: none;
+}
+
+
+.todo-item-content {
+    flex-grow: 1;
+    color: #7b7b7b;
+    padding: 0 16px;
+}
+
+.todo-item-date {
+    display       : flex;
+    flex-direction: column;
+    text-align    : center;
+    font-weight   : bold;
+    background    : #ecb2c3;
+    padding       : 6px 14px;
+    border-radius : 6px;
+    color         : white;
+}
+
+.todo-item-date .day {
+    font-size: 22px;
+}
+
+.todo-item-date .month {
+    font-size: 14px;
+}
+
+.todo-item:hover .todo-item-content {
+    color: #4e4e4e;
+}
+
+
+.delete-btn {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-image: url(../assets/icon-delete-light.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    flex-shrink: 0;
+}
+
+.delete-btn:hover {
+    background-image: url(../assets/icon-delete.png);
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #c7c7c7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #909090;
+}
+
+
+
+.items-container {
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.items-container .no-items-message {
+    display: none;
+    margin : auto;
+
+}
+
+.no-items-message:only-child {
+    display: block;
+}
+
+
+#all-items-container,
+#active-items-container,
+#completed-items-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+/****************************FOOTER*************************************/
+
+footer {
+    display                   : flex;
+    padding                   : 8px 4px;
+    align-items               : center;
+    flex-shrink               : 0;
+    border-bottom-left-radius : 10px;
+    border-bottom-right-radius: 10px;
+
+    background-color: #f5f5f5;
+}
+
+input {
+    border : none;
+    padding: 8px;
+
+    flex-grow: 1;
+
+    background: transparent;
+}
+
+input:focus,
+input:active,
+input:hover {
+    border : none;
+    outline: none;
+}
+
+#add-btn {
+    padding-right: 14px;
+    font-weight  : bold;
+    cursor       : pointer;
+    color        : grey;
+}
+
+#add-btn:hover {
+    color: rgb(58, 58, 58);
+}
